@@ -1,3 +1,8 @@
+body {
+  padding-top: 60px; /* Adjust this to match your navbar height */
+}
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +44,9 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.Nav{
+  padding-top: 100px;
+
 }

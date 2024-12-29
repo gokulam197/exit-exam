@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { addFeedback } from '../api/feedbackApi';
+import './AddFeedback.css'; // Make sure to import the CSS file
 
 function AddFeedback() {
   const [formData, setFormData] = useState({
@@ -20,12 +21,50 @@ function AddFeedback() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" name="courseName" placeholder="Course Name" value={formData.courseName} onChange={handleChange} required /><br />
-      <textarea name="comments" placeholder="Comments" value={formData.comments} onChange={handleChange} required></textarea><br />
-      <input type="number" name="rating" placeholder="Rating" value={formData.rating} onChange={handleChange} required /><br />
-      <input type="text" name="duration" placeholder="Duration" value={formData.duration} onChange={handleChange} /><br />
-      <button type="submit">Add Feedback</button>
+    <form className="feedback-form" onSubmit={handleSubmit}>
+      <div className="form-group">
+        <input
+          type="text"
+          name="courseName"
+          className="form-input"
+          placeholder="Course Name"
+          value={formData.courseName}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <textarea
+          name="comments"
+          className="form-input"
+          placeholder="Comments"
+          value={formData.comments}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="number"
+          name="rating"
+          className="form-input"
+          placeholder="Rating (1-5)"
+          value={formData.rating}
+          onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="text"
+          name="duration"
+          className="form-input"
+          placeholder="Duration"
+          value={formData.duration}
+          onChange={handleChange}
+        />
+      </div>
+      <button type="submit" className="submit-button">Add Feedback</button>
     </form>
   );
 }

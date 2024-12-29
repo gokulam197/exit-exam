@@ -1,15 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../App.css';
+
 
 const NavBar = () => {
   const styles = {
     navbar: {
+      position: 'fixed',           // Fixed position at the top of the page
+      top: 0,                      // Align at the top of the page
+      left: 0,                     // Align with the left side
+      width: '100%',                // Make it take full width
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
       backgroundColor: '#4CAF50',
       padding: '10px 20px',
       boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      zIndex: 1000,                // Ensure it stays above other content
     },
     logo: {
       fontSize: '1.5rem',
@@ -38,8 +45,9 @@ const NavBar = () => {
       color: '#4CAF50',
     },
   };
-
+  
   return (
+    <div class = "nav">
     <nav style={styles.navbar}>
       <a href="/" style={styles.logo}>
         Feedback Admin
@@ -63,6 +71,7 @@ const NavBar = () => {
         </Link>
       </div>
     </nav>
+    </div>
   );
 };
 
